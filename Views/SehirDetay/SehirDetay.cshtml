@@ -1,0 +1,45 @@
+﻿@using Turkiyenin81Yuzu.Models.Entity
+@using Turkiyenin81Yuzu.Models.Siniflar
+@model List<SehirBilgi>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<html>
+<head>
+    <link href="~/Dosyalar/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/Dosyalar/css/style2.css" rel='stylesheet' type='text/css' />
+</head>
+<body>
+    <div class="single">
+        <div class="container">
+            <div class="col-md-8 single-main">                
+                @foreach (var x in Model)
+                {
+                    <div class="single-grid">
+                        <h1>@x.SehirAd</h1>
+                        <br>
+                        <img src="@x.GezilecekYerFotograf" alt="" />
+                        <h2>Gezilecek Yerler</h2>
+                        <p>
+                            @x.GezilecekYer
+                        </p>
+                        <h2>Yemekler</h2>
+                        <p>
+                            @x.Yemekler
+                        </p>
+                        <br />
+                        <img src="@x.YemeklerFotograf" alt="" />
+                    </div>
+                }
+            </div>
+            <br>
+            <br>
+            <br>
+            @Html.Action("PopulerSehirlerListe", "Default")
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</body>
+</html>

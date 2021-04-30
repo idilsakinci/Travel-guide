@@ -1,0 +1,15 @@
+﻿@using Turkiyenin81Yuzu.Models.Entity
+@using Turkiyenin81Yuzu.Models.Siniflar
+@model List<SehirBilgi>
+@foreach (var x in Model)
+{
+    <div class="right">
+        <div class="bot-left">
+            <img src="@x.GezilecekYerFotograf" alt="" />
+        </div>
+        <div class="left-text">
+            <h4>@x.SehirAd</h4>
+            <p><a href="/SehirDetay/SehirDetay/@x.SehirId"><span class="read">Şehre Git</span></a></p>
+        </div>
+    </div>
+}

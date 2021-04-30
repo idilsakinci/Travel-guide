@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="91e590f4002b42cdab7a33c93eb3c0fa" Name="Diagram1">
+        <EntityTypeShape EntityType="SehirlerModel.Kategoriler" Width="1.5" PointX="4.375" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SehirlerModel.SehirBilgi" Width="1.5" PointX="6.625" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="SehirlerModel.sysdiagrams" Width="1.5" PointX="8.5" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SehirlerModel.Yonetici" Width="1.5" PointX="6.75" PointY="7.5" IsExpanded="true" />
+        <AssociationConnector Association="SehirlerModel.FK_SehirBilgi_Kategoriler" ManuallyRouted="false" />
+        <AssociationConnector Association="SehirlerModel.FK_SehirBilgi_Kategoriler1" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

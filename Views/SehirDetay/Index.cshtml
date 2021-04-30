@@ -1,0 +1,44 @@
+﻿@using Turkiyenin81Yuzu.Models.Entity
+@using Turkiyenin81Yuzu.Models.Siniflar
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<SehirBilgi>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<html>
+<head>
+    <link href="~/Dosyalar/css/bootstrap.css" rel='stylesheet' type='text/css' />
+    <link href="~/Dosyalar/css/style2.css" rel='stylesheet' type='text/css' />
+</head>
+<body>
+    <div class="single">
+        <div class="container">
+            <div class="con-top" id="con-top2">
+                <h3>Şehirler</h3>
+                <p class="explanation">Türkiye'nin 81 Yüzü'nü bu sayfada görüntülemektesiniz. Şehir hakkında detaylı bilgiye ulaşmak için şehir ismine tıklayabilirsiniz. <p>
+            </div>
+            <div class="col-md-8 single-main">
+                @foreach (var x in Model)
+                {
+                    <div class="single-grid">
+                        <h1><a href="/SehirDetay/SehirDetay/@x.SehirId">@x.SehirAd</a></h1>
+                        <br>
+                        <img src="@x.GezilecekYerFotograf" alt="" />
+                        <br /> <br /> <br /> <br />
+                    </div>
+                }
+            </div>
+            <br>
+            <br>
+            <br>
+            @Html.Action("PopulerSehirlerListe", "Default")
+            <div class="clearfix"></div>
+            @Html.PagedListPager((IPagedList)Model, sayfa => Url.Action("Index", new { sayfa }))
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<!DOCTYPE HTML>
+<html>
+<body>
+    <div class="header-banner">
+        <div class="wrap">
+            <div class="banner">
+                <div class="indent" id="hakkinda">
+                    <h2 class="indent-left margin-bot">Türkiye'nin 81 Yüzü'ne Hoş Geldiniz!</h2>
+                    <p class="explanation">Gezi rehberi olan sitemizde dilerseniz popüler şehirler bölümünden inceleme yapabilir, dilerseniz hazırladığımız testteki sorulara cevap vererek size özel hazırlayacağımız şehir listesine ulaşabilir ve detaylı bilgi alabilirsiniz. İyi eğlenceler dileriz!</p>
+                    <br />
+                    <div class="header_bottom_right_images">
+                        <div class="slider">
+                            <ul class="rslides" id="slider1">
+                                <li><img src="~/Dosyalar/images/slider1.png" alt=""></li>
+                                <li><img src="~/Dosyalar/images/slider2.jpg" alt=""></li>
+                                <li><img src="~/Dosyalar/images/slider3.jpg" alt=""></li>
+                                <li><img src="~/Dosyalar/images/slider4.jpg" alt=""></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="clear"></div>
+                <br />
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class"content">
+        <div class="wrap">
+            <div class="wrapper">
+                <div class="grids">
+                    <div class="box1" id="Kategoriler">
+                        <div class="con-top">
+                            <h3>Kategoriler</h3>
+                            <p class="explanation">Bu bölümde kategorilerden ilginizi çekeni seçerek size özel hazırladığımız olan listeye ulaşabilirsiniz. Açılacak olan 'Uygun Şehirler' listesinden merak ettiğiniz şehri seçerek hakkında detaylı bilgiye ulaşabilirsiniz.</p>
+                        </div>
+                        <div class="padding1">
+                            <h4>Lütfen Seçim Yapın</h4>
+                            @foreach (var x in Model)
+                            {
+                                <div class="box-left">
+                                    <div class="bot-img">
+                                        <img src=@x.KategoriResim alt="" />
+                                    </div>
+                                    <div class="bot-desc">
+                                        <p>@x.KategoriAd</p>
+                                    </div>
+                                    <p class="button"><a href="/Default/SehirlerListe/@x.KategoriId"><span class="read">Şehirleri Göster</span></a></p>
+                                    <div class="clear"></div>
+                                </div>
+                            }
+                        </div>                      
+                        <div class="clear"></div>
+                    </div>
+                </div>
+                <div class="con-top" id="populersehirler">
+                    <h3>Popüler Şehirler</h3>
+                    <p class="explanation">Bu bölümde Türkiye'nin popüler bazı şehirleri gösterilmektedir. 'Şehre Git' butonundan ilgili şehir hakkında detaylı bilgiye ulaşabilirsiniz.</p>
+                </div>
+                @Html.Action("Partial1", "Default")
+                @Html.Action("Partial3", "Default")
+                @Html.Action("Partial5", "Default")
+            </div>
+        </div>
+    </div>
+</body>
+</html>

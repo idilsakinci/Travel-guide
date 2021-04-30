@@ -1,0 +1,61 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Türkiye'nin 81 Yüzü</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Gezi Rehberi, Şehirler, Türkiye, Gezilecek Yerler, Yemekler" />
+    <link href="~/Dosyalar/css/style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="~/Dosyalar/css/slider.css" rel="stylesheet" type="text/css" media="all" />
+    <link rel="icon" href="~/Dosyalar/images/favicon.jpg" type="image/png" />
+    <script src="~/Dosyalar/js/jquery.min.js"></script>
+    <script src="~/Dosyalar/js/responsiveslides.min.js"></script>
+    <script>
+        $(function () {
+            $("#slider1").responsiveSlides({
+                auto: true,
+                nav: true,
+                speed: 500,
+                namespace: "callbacks",
+            });
+        });
+    </script>
+</head>
+<body>
+    <div class="header">
+        <div class="wrap">
+            <div class="logo">
+                <a href="/Default/Index"><h1>Türkiye'nin 81 Yüzü</h1></a>
+                <div class="clear"></div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="header-bottom">
+        <div class="wrap">
+            <ul id="nav">
+                <li><a href="/Default/Index">Anasayfa</a></li>
+                <li><a href="/SehirDetay/Index/">Şehirler</a></li>
+                <li><a href="/Default/Index/#Kategoriler">Kategoriler</a></li>
+                <li><a href="/Default/Index/#populersehirler">Popüler Şehirler</a></li>
+                <li><a href="/Default/Iletisim/">İletişim</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class"content">
+        @RenderBody()
+    </div>
+    <div class="footer-bottom">
+        <div class="wrap">
+            <div class="copy">
+                <p>&copy; 2020 Türkiye'nin 81 Yüzü. Bütün Hakları Saklıdır. | İdil Sakıncı</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

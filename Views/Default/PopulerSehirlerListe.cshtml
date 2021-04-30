@@ -1,0 +1,17 @@
+﻿@using Turkiyenin81Yuzu.Models.Entity
+@using Turkiyenin81Yuzu.Models.Siniflar
+@model List<SehirBilgi>
+
+<div class="col-md-4 side-content">
+    <div class="populersehirliste">
+        <h3>Popüler Şehirler</h3>
+        <ul>
+            @{ int i = 0;}
+            @foreach (var x in Model)
+            {
+                <li><a href="/SehirDetay/SehirDetay/@x.SehirId">@{i++;} @i. @x.SehirAd</a></li>
+            }
+        </ul>
+    </div>
+    <div class="clearfix"></div>
+</div>
